@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📚 Library Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="dashboard">
+  <div class="container">
+    <header>
+      <h1>📚 Library Management System</h1>
+      <div class="top-bar">
+        <input type="text" id="searchInput" placeholder="🔍 Search by Title or Author..." onkeyup="filterBooks()" />
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-buttons">
+      <button onclick="showTab('books')" class="active">Books</button>
+      <button onclick="showTab('issue')">Issue Book</button>
+      <button onclick="showTab('issuedList')">Issued Books</button>
+    </nav>
+
+    <!-- BOOKS TAB -->
+    <section id="books" class="tab active">
+      <div class="form-section">
+        <h2>Add New Book</h2>
+        <div class="form-fields">
+          <input type="text" id="title" placeholder="Book Title" />
+          <input type="text" id="author" placeholder="Author Name" />
+          <input type="text" id="isbn" placeholder="ISBN" />
+          <input type="number" id="copies" placeholder="Number of Copies" />
+          <button onclick="addBook()">Add Book</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <h2>Book Collection</h2>
+        <table id="bookTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+              <th>Copies</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ISSUE BOOK TAB -->
+    <section id="issue" class="tab">
+      <h2>Issue a Book</h2>
+      <div class="form-fields">
+        <input type="number" id="bookIdIssue" placeholder="Book ID" />
+        <input type="text" id="studentName" placeholder="Student Name" />
+        <button onclick="issueBook()">Issue Book</button>
+      </div>
+    </section>
+
+    <!-- ISSUED BOOKS TAB -->
+    <section id="issuedList" class="tab">
+      <h2>Issued Books List</h2>
+      <div class="table-container">
+        <table id="issuedTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Book Title</th>
+              <th>Student</th>
+              <th>Issued On</th>
+              <th>Returned On</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

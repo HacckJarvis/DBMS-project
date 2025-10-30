@@ -1,0 +1,105 @@
+/* ====== GLOBAL ====== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #ece7d1, #d8cbb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ====== LOGIN CONTAINER ====== */
+.login-container {
+  background: #ffffffd9;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #bfa980;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h1 {
+  color: #184d47;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px #bfa980;
+}
+
+/* ====== INPUT FIELDS ====== */
+.login-container input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #bfa980;
+  border-radius: 8px;
+  background: #f5f2e8;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #184d47;
+  box-shadow: 0 0 6px rgba(24, 77, 71, 0.3);
+}
+
+/* ====== BUTTON ====== */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #184d47;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-container button:hover {
+  background-color: #267368;
+  transform: translateY(-2px);
+}
+
+/* ====== MESSAGE ====== */
+#msg {
+  color: red;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ====== BACKGROUND DECOR ====== */
+body::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #184d47;
+  border-radius: 50%;
+  top: 10%;
+  left: 5%;
+  opacity: 0.1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #bfa980;
+  border-radius: 50%;
+  bottom: 10%;
+  right: 5%;
+  opacity: 0.1;
+}
